@@ -28,4 +28,4 @@ A simple yet powerful Markdown editor that allows users to write and preview the
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/advanced-markdown-editor.git
+   git clone https://github.com/shehzab/Markdown-Editor.git
