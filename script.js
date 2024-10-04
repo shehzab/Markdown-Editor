@@ -4,7 +4,7 @@ const preview = document.getElementById('preview');
 const darkModeBtn = document.getElementById('darkModeBtn');
 let debounceTimer;
 
-// Initialize marked.js
+
 marked.setOptions({
     highlight: function(code, language) {
         if (language && hljs.getLanguage(language)) {
@@ -24,11 +24,11 @@ editor.addEventListener('input', function() {
 
 darkModeBtn.addEventListener('click', toggleTheme);
 
-// Initialize
+
 loadSavedContent();
 updatePreview();
 
-// Core Functions
+
 function updatePreview() {
     const markdown = editor.value;
     preview.innerHTML = marked.parse(markdown);
@@ -62,7 +62,7 @@ function insertText(prefix, suffix = '') {
     updatePreview();
 }
 
-// Template Functions
+
 const templates = {
     readme: `# Project Title\n\n## Description\n\nBrief description of your project\n\n## Installation\n\n\`\`\`bash\nnpm install\n\`\`\`\n\n## Usage\n\n\`\`\`javascript\nconst example = 'Hello World';\nconsole.log(example);\n\`\`\`\n\n## License\n\nMIT`,
     blog: `# Blog Post Title\n\n![Cover Image](image-url)\n\n## Introduction\n\nStart with an engaging introduction.\n\n## Main Content\n\nYour main content here.\n\n### Subheading\n\nMore detailed information.\n\n## Conclusion\n\nSum up your post.\n\n---\n*Author: Your Name*`
@@ -74,7 +74,7 @@ function insertTemplate(type) {
     closePopup();
 }
 
-// Storage Functions
+
 function saveMarkdown() {
     localStorage.setItem('markdownContent', editor.value);
     alert('Content saved!');
@@ -95,7 +95,7 @@ function loadMarkdown() {
     }
 }
 
-// Popup Functions
+
 function showTemplates() {
     document.getElementById('templatesPopup').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -106,7 +106,7 @@ function closePopup() {
     document.getElementById('overlay').style.display = 'none';
 }
 
-// Handle keyboard shortcuts
+
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey || e.metaKey) {
         switch(e.key) {
