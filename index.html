@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">Markdown Editor</h1>
+    </div>
+
+    <div class="toolbar">
+        <div class="btn-group">
+            <button class="btn" onclick="insertText('**', '**')">Bold</button>
+            <button class="btn" onclick="insertText('*', '*')">Italic</button>
+            <button class="btn" onclick="insertText('# ')">H1</button>
+            <button class="btn" onclick="insertText('## ')">H2</button>
+            <button class="btn" onclick="insertText('- ')">List</button>
+            <button class="btn" onclick="insertText('[', '](url)')">Link</button>
+            <button class="btn" onclick="insertText('```\n', '\n```')">Code</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn" id="darkModeBtn">Toggle Theme</button>
+            <button class="btn" onclick="showTemplates()">Templates</button>
+            <button class="btn" onclick="saveMarkdown()">Save</button>
+            <button class="btn" onclick="loadMarkdown()">Load</button>
+        </div>
+    </div>
+
+    <div class="editor-container">
+        <div class="editor-section">
+            <div class="section-header">Editor</div>
+            <textarea id="editor" placeholder="Enter your markdown here..."></textarea>
+        </div>
+        <div class="editor-section">
+            <div class="section-header">Preview</div>
+            <div id="preview"></div>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span id="wordCount">Words: 0</span>
+        <span id="charCount">Characters: 0</span>
+    </div>
+
+    <div class="popup" id="templatesPopup">
+        <h2>Templates</h2>
+        <button class="btn" onclick="insertTemplate('readme')">README</button>
+        <button class="btn" onclick="insertTemplate('blog')">Blog Post</button>
+        <button class="btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+</body>
+</html>
