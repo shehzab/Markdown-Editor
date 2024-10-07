@@ -23,9 +23,3 @@ A simple yet powerful Markdown editor that allows users to write and preview the
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, etc.)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shehzab/Markdown-Editor.git
